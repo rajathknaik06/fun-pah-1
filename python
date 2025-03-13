@@ -1,0 +1,49 @@
+""" St. Patrick Convent organizes a project exhibition called "Innovative Minds" every year with the objective of providing a platform and unleashing the potential of the students by showcasing their innovative projects.
+
+
+
+Albert is a science expert and a top student at his high school. He became interested about the project exhibition and enrolled his name for the same. 
+
+
+
+Albert’s Dad has a cell phone but often seemed to worry about the price plans for his phone that best fit his usage pattern and monthly expenses. There are two options, each plan has different costs for daytime minutes, evening minutes, and weekend minutes.
+
+
+
+
+
+
+
+Having this as a spark for his project, Albert decided to design a handy application that will input the number of each type of minute and output the cheapest plan for this usage pattern,using the format shown below. In the case that the two plans are the same price, output both plans. 
+
+
+
+He needs your help to evaluate his project and suggest corrections. You have to now write a program using functions to help Albert design a defect-free application to present at the project fair. 
+
+
+
+Function Specifications: printPlanDetails():
+
+"""
+
+
+def printPlanDetails(day,eve,nig):
+    a,b=0,0
+    if day>100:
+        a+=(day-100)*25
+        if day>250:
+            b+=(day-250)*45
+    a+=eve*15+nig*20
+    b+=eve*35+nig*25
+    print("Plan A costs %.2f"%(a/100))
+    print("Plan B costs %.2f"%(b/100))
+    if a>b:
+        print("Plan B is cheapest")
+    elif b>a:
+        print("Plan A is cheapest")
+    else:
+        print("Plan A and B are the same price")
+day=int(input())
+eve=int(input())
+nig=int(input())
+printPlanDetails(day,eve,nig)
